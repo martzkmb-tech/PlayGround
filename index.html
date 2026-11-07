@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101524">
+  <link rel="icon" href="data:,">
+  <title>Quiet Quest — Midnight Mode</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">◈</span><div><h1>QUIET QUEST</h1><p>MIDNIGHT MODE <span class="live-dot"></span></p></div></div>
+      <div class="top-meta"><span class="tag">NIGHT 01</span><span class="time" id="clock">12:04 AM</span></div>
+    </header>
+
+    <section class="game-layout" aria-label="Game area">
+      <div class="stage-wrap">
+        <canvas id="scene" aria-label="A quiet midnight living room with a game on TV"></canvas>
+        <div class="scene-vignette"></div>
+        <div class="crosshair" id="crosshair"><i></i></div>
+        <div class="toast" id="toast" aria-live="polite"></div>
+        <div class="stage-label"><span class="pulse"></span> LIVING ROOM <span class="separator">/</span> 3D PLAY</div>
+        <div class="stage-hint" id="stageHint">AIM AT THE TV • KEEP IT DOWN</div>
+      </div>
+
+      <aside class="panel">
+        <div class="panel-heading"><div><span class="eyebrow">YOUR MISSION</span><h2>One more round.</h2></div><div class="moon">☾</div></div>
+        <p class="intro">Rack up points on the TV without waking the house. Every shot makes a little noise — Dad checks in when he hears it.</p>
+        <div class="objective"><span class="objective-icon">✦</span><div><b>Score 12 points</b><small>Before the night is over</small></div><span class="score" id="score">00 <small>/ 12</small></span></div>
+
+        <div class="meter-block"><div class="meter-head"><span>ROOM NOISE</span><span id="noiseLabel">QUIET</span></div><div class="meter"><div class="meter-fill" id="noiseFill"></div><i class="meter-tick"></i></div><div class="meter-foot"><span>Keep below the radar</span><span id="noiseNum">08%</span></div></div>
+        <div class="volume-row"><div class="vol-icon" id="volumeIcon">♫</div><div class="vol-copy"><b>TV volume</b><small id="volumeLabel">Low • 2 / 5</small></div><button class="remote-button" id="remoteButton" aria-label="Press remote to turn the TV volume down"><span>⌄</span> REMOTE</button></div>
+        <div class="dad-status" id="dadStatus"><span class="eye-icon">◉</span><div><b>Dad is asleep</b><small>Every shot gets his attention</small></div><span class="status-pip"></span></div>
+
+        <div class="controls-title">HOW TO PLAY <span>PS5 CONTROLLER SUPPORTED</span></div>
+        <div class="controls-grid"><div><kbd>CLICK</kbd><span>Shoot</span></div><div><kbd>R</kbd><span>Remote</span></div><div><kbd>R2</kbd><span>Shoot</span></div><div><kbd>△</kbd><span>Remote</span></div></div>
+        <button class="start-button" id="startButton"><span>▶</span> START PLAYING <kbd>ENTER</kbd></button>
+        <p class="fineprint">A gentle stealth challenge. If you’re caught, the game simply pauses — no harm done.</p>
+      </aside>
+    </section>
+    <footer><span>✦ &nbsp; BEST PLAYED QUIETLY</span><span>TIP: Turn down the TV before your next shot.</span><button id="helpButton">CONTROLS ?</button></footer>
+  </main>
+  <div class="modal hidden" id="modal" role="dialog" aria-modal="true"><div class="modal-card"><div class="modal-icon" id="modalIcon">☾</div><span class="eyebrow" id="modalEyebrow">NIGHT'S OVER</span><h2 id="modalTitle">Nice and quiet.</h2><p id="modalText">You got your game in without waking anyone.</p><button class="start-button" id="againButton">↻ &nbsp; PLAY AGAIN</button><button class="text-button" id="closeModal">BACK TO ROOM</button></div></div>
+  <script src="game.js"></script>
+</body>
+</html>
